@@ -4,7 +4,9 @@ const cors = require("cors");
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-app.use(cors());
+app.use(cors({
+    origin: "https://travel-finder-production.up.railway.app"
+}));
 app.use(express.json());
 
 let favorites = [

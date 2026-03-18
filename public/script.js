@@ -34,7 +34,7 @@ async function searchCountry() {
 
 async function addFavorite(country) {
 
-    await fetch("https://tu-proyecto.up.railway.app/favorites", {
+    await fetch("https://travel-finder-production.up.railway.app/favorites", {
 
         method: "POST",
 
@@ -51,7 +51,7 @@ async function addFavorite(country) {
 
 async function loadFavorites() {
 
-    const response = await fetch("https://tu-proyecto.up.railway.app/favorites");
+    const response = await fetch("https://travel-finder-production.up.railway.app/favorites");
 
     const data = await response.json();
 
@@ -74,7 +74,7 @@ async function loadFavorites() {
 
 async function deleteFavorite(id) {
 
-    await fetch(`https://tu-proyecto.up.railway.app/favorites/${id}`, {
+    await fetch(`https://travel-finder-production.up.railway.app/favorites/${id}`, {
         method: "DELETE"
     });
 
