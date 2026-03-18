@@ -2,7 +2,7 @@ const express = require("express");
 const cors = require("cors");
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 app.use(cors());
 app.use(express.json());
@@ -52,6 +52,6 @@ app.delete("/favorites/:id", (req, res) => {
     res.json({ message: "Destinació eliminada" });
 });
 
-app.listen(PORT, () => {
-    console.log(`API executant-se a http://localhost:${PORT}`);
+app.listen(PORT, "0.0.0.0", () => {
+    console.log(`API executant-se al port ${PORT}`);
 });
